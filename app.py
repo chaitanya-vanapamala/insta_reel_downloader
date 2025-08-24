@@ -86,12 +86,10 @@ else:
     # Default UI if no URL parameter is found
     st.markdown("Enter the URL of the Instagram Reel you want to download below.")
 
-    col1, col2 = st.columns([0.8, 0.2])
-    with col1:
-        url_from_input = st.text_input("Instagram Reel/Post URL:", placeholder="https://www.instagram.com/reel/C1_AbCd...")
+    url_from_input = st.text_input("Instagram Reel/Post URL:", placeholder="https://www.instagram.com/reel/C1_AbCd...")
     
-    with col2:
-        if st.button("Go", type="primary"):
+    with st.container(horizontal=True, horizontal_alignment="center"):
+        if st.button("Load Video", type="primary", width=200):
             process_and_download(url_from_input)
 
     st.markdown("---")
